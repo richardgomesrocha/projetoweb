@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Usuários Cadastrados</h1>
+<a href="/usuarios/novo">Cadastrar Novo Usuário</a>
+    <hr>
+    <ul>
+ {{#each usuarios}}
+        <li>
+       (ID: {{this.id}}) - {{this.nome}} - {{this.email}}
+     <a href="/usuarios/ver/{{this.id}}">[Ver Detalhes]</a>
+            
+     <form action="/usuarios/excluir/{{this.id}}" method="POST" style="display:inline;">
+         <button type="submit">Excluir</button>
+     </form>
+        </li>
+ {{else}}
+    <p>Nenhum usuário cadastrado.</p>
+{{/each}}
+    </ul>
+<br>
+<a href="/">Voltar para Home</a>
+</body>
+</html>

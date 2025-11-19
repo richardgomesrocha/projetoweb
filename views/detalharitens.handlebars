@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>{{item.nome}}</h1>
+    <p><strong>Tipo:</strong> {{item.tipo}}</p>
+    <p><strong>Categoria:</strong> {{item.categoria}}</p>
+    <p><strong>Descrição:</strong> {{item.descricao}}</p>
+    <hr>
+    <h2>Informações do Dono</h2>
+    <p><strong>Nome:</strong> <a href="/usuarios/ver/{{dono.id}}">{{dono.nome}}</a></p>
+    <p><strong>Email:</strong> {{dono.email}}</p>
+    
+    <br>
+    <a href="/itens">Voltar para Lista de Itens</a>
+</body>
+</html>

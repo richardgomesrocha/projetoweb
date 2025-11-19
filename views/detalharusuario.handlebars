@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>{{usuario.nome}}</h1>
+    <p><strong>Email:</strong> {{usuario.email}}</p>
+    <p><strong>ID:</strong> {{usuario.id}}</p>
+    
+    <hr>
+    
+    <h2>Itens de {{usuario.nome}}:</h2>
+    <ul>
+        {{#each itensDoUsuario}}
+        <li>
+            <a href="/itens/{{this.id}}">{{this.nome}}</a> ({{this.tipo}})
+        </li>
+        {{else}}
+        <p>Este usuário não cadastrou nenhum item.</p>
+        {{/each}}
+    </ul>
+    
+    <br>
+    <a href="/usuarios">Voltar para </a>
+</body>
+</html>

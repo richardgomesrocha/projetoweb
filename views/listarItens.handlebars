@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Itens para Troca/Doação</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Itens Disponíveis</h1>
+    <a href="/itens/novo">Cadastrar Novo Item</a>
+    <hr>
+    
+    {{#each itens}}
+    <div style="border: 1px solid #ccc; margin-bottom: 10px; padding: 10px;">
+        <h3>{{this.nome}} ({{this.tipo}})</h3>
+        <p><strong>Categoria:</strong> {{this.categoria}}</p>
+        <p><strong>Dono:</strong> {{this.nomeDono}}</p>
+        <a href="/itens/{{this.id}}">Ver detalhes do item</a>
+    </div>
+    {{else}}
+    <p>Nenhum item cadastrado na plataforma.</p>
+    {{/each}}
+
+    <br>
+    <a href="/">Voltar para Home</a>
+</body>
+</html>
